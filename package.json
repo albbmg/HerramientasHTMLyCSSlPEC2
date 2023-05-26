@@ -5,7 +5,7 @@
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
     "parcel:serve": "parcel src/index.html -p 1234 --target web --open",
-    "parcel:build": "parcel build src/index.html --target web --no-source-maps --no-cache",
+    "parcel:build": "parcel build src/index.html --target web --no-source-maps --no-cache --posthtml-config .posthtmlrc",
     "clean": "rimraf dist .cache .cache-loader .parcel-cache",
     "dev": "npm-run-all clean parcel:serve",
     "start": "npm run dev",
@@ -49,7 +49,9 @@
     "parcel": "^2.8.3",
     "postcss": "^8.2.1",
     "postcss-import": "^15.1.0",
-    "rimraf": "^5.0.0"
+    "posthtml-include": "^1.7.4",
+    "rimraf": "^5.0.0",
+    "sharp": "^0.31.3"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.4.0",

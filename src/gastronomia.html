@@ -11,30 +11,31 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,300;1,400;1,900&display=swap" rel="stylesheet">
   </head>
   <body>
-    <header>
-      <span class="logo"><a href="index.html">Burg<img src="./assets/images/favicon.png">s</a></span>
-      <nav>
-        <ul>
-          <li><a href="historia-cultura.html">Historia y cultura</a></li>
-          <li><a href="turismo-ocio.html">Turismo y ocio</a></li>
-          <li><a href="gastronomia.html">Gastronomía</a></li>
-        </ul>
-       </nav>
-    </header>
+    <include src="./views/header.html"></include>
     <main>
       <section class="secondary-hero">
-        <h1>Gastronomía</h1>
+        <h2>Gastronomía</h2>
       </section>
       <section class="detail-cat">
         <p class="subtitle" id="discover">Explora</p>
         <div class="inner-cat">
           <div class="col-1">
-            <img class="image-burgos" src="./assets/images/cordero.jpg" alt="Chuletillas de cordero Típico plato de la comida burgalesa">
+            <picture>
+              <source srcset="./assets/images/cordero.jpg?as=webp&width=250&height=250&crop=focalpoint" media="(max-width: 767px)" type="image/webp" />
+              <source srcset="./assets/images/cordero.jpg?as=webp&width=275&height=275&crop=focalpoint" media="(min-width: 768px) and (max-width: 1023px)" type="image/webp" />
+              <source srcset="./assets/images/cordero.jpg?as=webp&width=300&height=300&crop=focalpoint" media="(min-width: 1024px)" type="image/webp" />
+              <img src="./assets/images/cordero.jpg" alt="Chuletillas de cordero Típico plato de la comida burgalesa"/>
+            </picture>
             <a href="comida.html"><h3>Chuletillas de cordero</h3></a>  
             <a href="comida.html"><p>Leer más ></p></a>     
           </div>
           <div class="col-2">
-            <img class="image-burgos" src="./assets/images/queso.jpg" alt="El clásico queso fresco de burgos, un postre ideal">
+            <picture>
+              <source srcset="./assets/images/queso.jpg?as=webp&width=250&height=250&crop=focalpoint" media="(max-width: 767px)" type="image/webp" />
+              <source srcset="./assets/images/queso.jpg?as=webp&width=275&height=275&crop=focalpoint" media="(min-width: 768px) and (max-width: 1023px)" type="image/webp" />
+              <source srcset="./assets/images/queso.jpg?as=webp&width=300&height=300&crop=focalpoint" media="(min-width: 1024px)" type="image/webp" />
+              <img src="./assets/images/queso.jpg" alt="Chuletillas de cordero Típico plato de la comida burgalesa"/>
+            </picture>
             <a href="comida.html"><h3>Los mejores postres: Queso fresco de Burgos</h3></a>
             <a href="comida.html"><p>Leer más ></p></a>
           </div>
@@ -46,18 +47,7 @@
         </div>
       </section>
     </main> 
-    <footer>
-      <div class="inner-footer">
-        <span class="logo-footer"><a href="index.html">Burg<img src="./assets/images/favicon.png">s</a></span>
-        <p>Copyright 2023 © | Herramientas HTML y CSS I | Alba Muñoz García</p>
-        <div class="social-icons">
-          <a href="https://www.facebook.com/aytoburgos/" target="_blank" class="social-icons"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://twitter.com/Aytoburgos/" class="social-icons" target="_blank"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.instagram.com/aytoburgos/" class="social-icons" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://github.com/albbmg/HerramientasHTMLyCSSI.git/" target="_blank" cclass="social-icons"><i class="fab fa-github"></i></a>
-        </div>
-      </div>
-    </footer>
+    <include src="./views/footer.html"></include>
     <script src="./assets/js/main.js"></script>
   </body>
 </html>

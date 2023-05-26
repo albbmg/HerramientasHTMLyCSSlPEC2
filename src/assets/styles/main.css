@@ -16,8 +16,6 @@
 @import '_reset.css';
 @import '_elements.css';
 
-/* autoprefixer grid: autoplace */
-
 * {
   box-sizing: border-box;
   font-family: var(--primary-font );
@@ -96,12 +94,26 @@ header {
   text-decoration: none;
   color: var(--primary-color ); 
 }
-.logo img, .logo-footer img {
+.logo svg, .logo-footer svg {
   width: 45px; 
   height: 45px; 
   object-fit: cover; 
   margin-bottom: -5px;
+  margin-right: -15px;
+  animation: pulsante 1s infinite;
 }
+@keyframes pulsante {
+  0% {
+    transform: scale(1); /* Tamaño original */
+  }
+  50% {
+    transform: scale(1.05); /* Tamaño ligeramente más grande */
+  }
+  100% {
+    transform: scale(1); /* Volver al tamaño original */
+  }
+}
+
 header nav ul {
   display: flex; 
   align-items: flex-end;
@@ -122,21 +134,40 @@ footer {
   background-color: var(--primary-color );
   padding-top: var(--big-space );
   padding-bottom: var(--big-space );
+  color: var(--secondary-color );
+  display: flex; 
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
 }
 .logo-footer a {
   text-decoration: none;
   color: var(--secondary-color ); 
 }
 .inner-footer {
+  width: 100vw; 
   display: flex; 
-  align-items: center; 
   justify-content: space-between;
+  align-items: center;
 }
 .inner-footer a, .inner-footer p {
   text-decoration: none;
   color: var(--secondary-color ); 
 }
-.inner-footer p {
+footer p {
+  text-align: center; 
+}
+.inner-footer ul {
+  list-style: none;
+  justify-content: center;
+  display: flex;
+  gap: 20px; 
+}
+.inner-footer ul li {
+  text-align: center; 
+}
+.inner-footer ul li a:hover{
+  text-decoration: underline; 
   text-align: center; 
 }
 .social-icons {
@@ -160,12 +191,23 @@ footer {
   background-color: rgba(255, 255, 255, 0.87);
   border-radius: 20px; 
   box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.35); /* Agregamos un sombreado en la misma forma que el contenedor */
+  animation: fade-in-up 1s ease-in-out;
 }
 .hero h1, .hero p {
   text-align: center; 
 }
 .hero p {
   font-weight: var(--titles-weight);
+}
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .categories {
@@ -184,11 +226,6 @@ footer {
   flex-direction: column; 
   gap: 20px;
   align-items: center;
-}
-.categories .category-icon {
-  width: 50px; 
-  height: 50px; 
-  object-fit: contain;
 }
 .categories h3 {
   font-size: var(--subtitles-font );
@@ -220,12 +257,14 @@ footer {
   gap: 20px; 
   align-self: flex-start; 
 }
-.info img {
-  width: 90%;
-  border-radius: 35% 70% 60% 25% / 40% 50% 50% 45%;
-  box-shadow: 30px -50px #242631;
-  height: 500px; 
+.info .clip-img {
+  clip-path: path('M150,0 C69.1,0 0,69.1 0,150 C0,295.44 150,450 150,450 C150,450 300,295.44 300,150 C300,69.1 230.9,0 150,0 Z');
   object-fit: cover;
+  object-position: center;
+  height: 450px !important;
+  transform: translateX(-50%);
+  left: 50%;
+  position: relative;
 }
 
 .detail {
@@ -254,11 +293,9 @@ footer {
   text-align: center; 
 }
 .inner img {
-  width: 275px; 
-  height: 250px; 
   object-fit: cover;
   border-radius: 20px;
-}
+} 
 
 /* Páginas de categoría: Historia y cultura, Turismo y Ocio y Gastronomía */
 .secondary-hero {
@@ -274,6 +311,7 @@ footer {
   background-color: rgba(255, 255, 255, 0.87);
   border-radius: 20px; 
   box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.35); /* Agregamos un sombreado en la misma forma que el contenedor */
+  animation: fade-in-up 1s ease-in-out;
 }
 
 .detail-cat {
@@ -322,6 +360,19 @@ footer {
   border-radius: 20px; 
   box-shadow: inset 0 0 0 1000px rgba(255, 255, 255, 0.35);
   margin-bottom: var(--bigger-space);
+  animation: fade-in-up 1s ease-in-out;
+}
+
+.image-burgos {
+  border-radius: 20px; 
+}
+.cat-img {
+  border-radius: 20px;
+}
+
+.img-gallery {
+  display: flex; 
+  gap: 35px; 
 }
 
 .image-container {
@@ -376,6 +427,45 @@ footer {
   margin-bottom: var(--bigger-space); 
 }
 
+/* Página de enlace */
+.link-title {
+  text-align: center; 
+}
+
+dl {
+  margin-bottom: 15px;
+}
+dt {
+  position: relative;
+  padding-left: 20px;
+  margin-top: 25px; 
+}
+dd {
+  word-break: break-all;
+}
+
+dt:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 10px;
+  background-color: #000;
+  animation: rotateSquare 2s infinite linear;
+}
+
+@keyframes rotateSquare {
+  0% {
+    transform: translateY(-50%) rotate(0deg);
+  }
+  100% {
+    transform: translateY(-50%) rotate(360deg);
+  }
+}
+
+
 @media screen and (max-width: 1024px) {
   main, header, .inner-footer {
     padding: 0 var(--mid-space ); 
@@ -399,7 +489,6 @@ footer {
   }
   .info img {
     margin-top: var(--big-space );
-    height: auto; 
   }
 
   .inner {
@@ -419,13 +508,27 @@ footer {
   }
 
   .inner-footer {
+    width: 90%; 
     flex-direction: column;
+  }
+  .inner-footer ul {
+    flex-direction: column;
+  }
+
+  .img-gallery {
+    flex-direction: column;  
+    justify-content: center;
+    align-items: center; 
   }
 }
 
 @media screen and (max-width: 768px) {
   main {
     padding: 0 var(--small-space ); 
+  }
+  footer {
+    padding: var(--mid-space );
+    gap: 35px
   }
   h1 {
     font-size: 35px;
@@ -447,12 +550,6 @@ footer {
   .categories .col-1, .categories .col-2, .categories .col-3  {
     width: 100%;
     margin-top: 20px; 
-  }
-
-  .info img {
-    width: 90%;
-    box-shadow: 30px -20px #242631;
-    margin: 0 auto; 
   }
 
   .nav-btns {

@@ -11,24 +11,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,500;1,300;1,400;1,900&display=swap" rel="stylesheet">
   </head>
   <body>
-    <header>
-      <span class="logo"><a href="index.html">Burg<img src="./assets/images/favicon.png">s</a></span>
-      <nav>
-        <ul>
-          <li><a href="historia-cultura.html">Historia y cultura</a></li>
-          <li><a href="turismo-ocio.html">Turismo y ocio</a></li>
-          <li><a href="gastronomia.html">Gastronomía</a></li>
-        </ul>
-       </nav>
-    </header>
+    <include src="./views/header.html"></include>
     <main>
       <section class="detail-hero">
         <h1>Gastronomía</h1>
       </section>
       <section class="info">
         <div class="col-1">
-           <p class="subtitle" id="discover">Descubre Burgos</p>
+          <span class="animated-title">
+            <p class="subtitle" id="discover">Descubre Burgos</p>
+            <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="5">
+              <rect x="0" y="0" width="25%" height="1" fill="#242631">
+                <animate attributeName="x" from="-100%" to="30%" dur="1.5s" repeatCount="indefinite" />
+              </rect>
+            </svg>            
+          </span>
            <h2>Comida, Cultura y Diversión</h2>
+           <div class="img-gallery">                    
+            <picture>
+              <!-- Imagen para escritorio (300x300px) -->
+              <source srcset="./assets/images/comida1-full.jpg?width=250&height=250" media="(min-width: 1024px)">
+              <!-- Imagen para tableta (275x275px) -->
+              <source srcset="./assets/images/comida1-mid.jpg?width=225&height=225" media="(min-width: 768px)">
+              <!-- Imagen para móvil (250x250px) -->
+              <source srcset="./assets/images/comida1-low.jpg?width=200&height=200" media="(max-width: 767px)">
+              <!-- Imagen de respaldo para navegadores sin soporte para srcset -->
+              <img class="cat-img" src="./assets/images/castillo1-full.jpg" alt="El Cid Campeador">
+            </picture>      
+            <picture>
+              <!-- Imagen para escritorio (300x300px) -->
+              <source srcset="./assets/images/comida2-full.jpg?width=250&height=250&crop=bottom" media="(min-width: 1024px)">
+              <!-- Imagen para tableta (275x275px) -->
+              <source srcset="./assets/images/comida2-mid.jpg?width=225&height=225&crop=bottom" media="(min-width: 768px)">
+              <!-- Imagen para móvil (250x250px) -->
+              <source srcset="./assets/images/comida2-low.jpg?width=200&height=200&crop=bottom" media="(max-width: 767px)">
+              <!-- Imagen de respaldo para navegadores sin soporte para srcset -->
+              <img class="cat-img" src="./assets/images/castillo2-full.jpg" alt="El Cid Campeador">
+            </picture>                                                                                       
+           </div>
            <p>La gastronomía de Burgos es rica y variada, ofreciendo una gran cantidad de platos típicos que no te puedes perder. Destacan el lechazo asado, los embutidos como la morcilla, el queso de Burgos y el vino de Ribera del Duero.</p>
            <p>Estos platos tienen una gran importancia en la gastronomía de la ciudad y son considerados como algunas de las joyas culinarias de la región. Si visitas Burgos, no puedes dejar de probar su deliciosa comida.</p>
            <a href="https://www.spain.info/es/" target="_blank">Información obtenida de spain.info</a>
@@ -46,18 +66,7 @@
         <button><a href="cid.html">Siguiente ></a></button>
       </section>
     </main> 
-    <footer>
-      <div class="inner-footer">
-        <span class="logo-footer"><a href="index.html">Burg<img src="./assets/images/favicon.png">s</a></span>
-          <p>Copyright 2023 © | Herramientas HTML y CSS I | Alba Muñoz García</p>
-          <div class="social-icons">
-            <a href="https://www.facebook.com/aytoburgos/" target="_blank" class="social-icons"><i class="fab fa-facebook-f"></i></a>
-            <a href="https://twitter.com/Aytoburgos/" class="social-icons" target="_blank"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.instagram.com/aytoburgos/" class="social-icons" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://github.com/albbmg/HerramientasHTMLyCSSI.git/" target="_blank" cclass="social-icons"><i class="fab fa-github"></i></a>
-          </div>
-      </div>
-    </footer>
+    <include src="./views/footer.html"></include>
     <script src="./assets/js/main.js"></script>
   </body>
 </html>
