@@ -94,7 +94,7 @@ header {
   text-decoration: none;
   color: var(--primary-color ); 
 }
-.logo svg, .logo-footer svg {
+.logo img, .logo-footer img {
   width: 45px; 
   height: 45px; 
   object-fit: cover; 
