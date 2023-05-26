@@ -4,7 +4,7 @@
   "description": "Boilerplate used for PEC1 project",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "parcel:serve": "parcel src/index.html -p 1235 --target web --open",
+    "parcel:serve": "parcel src/index.html -p 1234 --target web --open",
     "parcel:build": "parcel build src/index.html --target web --no-source-maps --no-cache",
     "clean": "rimraf dist .cache .cache-loader .parcel-cache",
     "dev": "npm-run-all clean parcel:serve",
@@ -30,13 +30,13 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/albbmg/PEC1HerramientasHTMLyCSSI.git"
+    "url": "https://github.com/albbmg/HerramientasHTMLyCSSlPEC2"
   },
   "keywords": [],
   "author": "Alba Munoz Garcia <amunozgarcia3@uoc.edu>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/albbmg/PEC1HerramientasHTMLyCSSI.git"
+    "url": "https://github.com/albbmg/HerramientasHTMLyCSSlPEC2"
   },
   "homepage": "",
   "devDependencies": {
