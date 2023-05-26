@@ -4,7 +4,7 @@
   "description": "Boilerplate used for PEC1 project",
   "browserslist": "> 0.5%, last 2 versions, not dead",
   "scripts": {
-    "parcel:serve": "parcel src/index.html -p 1234 --target web --open",
+    "parcel:serve": "parcel src/index.html -p 1235 --target web --open",
     "parcel:build": "parcel build src/index.html --target web --no-source-maps --no-cache --posthtml-config .posthtmlrc",
     "clean": "rimraf dist .cache .cache-loader .parcel-cache",
     "dev": "npm-run-all clean parcel:serve",
